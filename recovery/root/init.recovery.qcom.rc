@@ -87,6 +87,21 @@ on property:twrp.decrypt.done=true && property:twrp.all.users.decrypted=true
     stop servicemanager
     stop hwservicemanager
 
+
+# fix magisk.zip install
+service fixmagisk /init.magisk.sh
+    #oneshot
+    #disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+
+
+
+
+
+
 # read ro.build.fingerprint from system, setprop it. for ota
 service fingerprintid /init.fingerprintid.sh
     oneshot
